@@ -27,17 +27,17 @@ export const tokenomicsData = {
     },
     {
       id: "network",
-      label: "Solana Network",
+      label: "Blockchain  Network",
       value: "To be announced",
-      status: "Pending Reveal",
+      status: "Solana",
       isTba: true,
       hint: "Selected chain will prioritize speed, low gas, and liquidity safety"
     },
     {
       id: "supply",
       label: "Total Supply",
-      value: "To be announced",
-      status: "Under Audit Review",
+      value: "More then 1B+",
+      status: "One Billion",
       isTba: true,
       hint: "Supply cap will be locked upon smart contract deployment"
     },
