@@ -1237,10 +1237,13 @@ summary:focus-visible {
 }
 
 @keyframes pulseLive {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.4;
     transform: scale(0.75);
@@ -1338,6 +1341,7 @@ summary:focus-visible {
   0% {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 201, 40, 0.2);
   }
+
   100% {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 45px rgba(217, 75, 255, 0.35);
   }
@@ -1627,31 +1631,45 @@ summary:focus-visible {
   margin-top: 2.5rem;
 }
 
-/* Callout Card */
+/* Callout Section (Compact, Borderless, Clean Normal Typography) */
+.community-callout-section {
+  padding-top: clamp(1.75rem, 3.5vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
 .callout-card {
-  padding: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 3.5vw, 2.5rem) clamp(1rem, 3vw, 2.25rem);
   text-align: center;
-  background: radial-gradient(circle at 50% 50%, rgba(30, 14, 60, 0.9) 0%, rgba(13, 5, 25, 0.9) 100%);
-  border-color: var(--border-gold);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 201, 40, 0.12);
+  background: radial-gradient(circle at 50% 50%, rgba(28, 12, 55, 0.75) 0%, rgba(10, 4, 20, 0.75) 100%);
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--radius-lg);
+  transform: none !important;
+}
+
+.callout-card:hover {
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .callout-content {
-  max-width: 860px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
 .callout-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-top: 1rem;
-  margin-bottom: 1.25rem;
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  margin-top: 0;
+  margin-bottom: 0.65rem;
 }
 
 .callout-sub {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  line-height: 1.6;
+  margin: 0 auto 1.4rem;
+  max-width: 660px;
 }
 
 .callout-countdown-wrap {
@@ -1659,105 +1677,120 @@ summary:focus-visible {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto 1.5rem;
 }
 
+/* Borderless, seamless countdown card */
 .callout-countdown-wrap .launch-countdown-card {
   margin: 0 auto;
   width: 100%;
   max-width: 100%;
-  padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1rem, 3.5vw, 2.75rem);
-  background: rgba(12, 5, 24, 0.76);
-  border: 1px solid rgba(255, 201, 40, 0.35);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 201, 40, 0.12);
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.callout-countdown-wrap .launch-countdown-card:hover {
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
 }
 
 .countdown-top-bar-centered {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .countdown-top-bar-centered .countdown-title-wrap {
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .countdown-top-bar-centered .countdown-crown-icon {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
 }
 
 .countdown-top-bar-centered .countdown-tag {
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 
 .callout-countdown-wrap .countdown-digits-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(0.5rem, 2vw, 1.25rem);
-  margin-bottom: 1.25rem;
+  gap: clamp(0.45rem, 1.8vw, 0.95rem);
+  margin: 0 auto 0.85rem;
   width: 100%;
+  max-width: 580px;
 }
 
 .callout-countdown-wrap .digit-box {
   flex: 1;
-  padding: clamp(0.85rem, 2.5vw, 1.5rem) clamp(0.4rem, 1.5vw, 1rem);
-  background: rgba(8, 4, 18, 0.78);
-  border: 1px solid rgba(139, 32, 255, 0.35);
-  border-radius: var(--radius-md);
-  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: clamp(0.6rem, 1.6vw, 0.95rem) clamp(0.35rem, 1vw, 0.75rem);
+  background: rgba(12, 6, 26, 0.8);
+  border: 1px solid rgba(139, 32, 255, 0.28);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.4);
   min-width: 0;
   transition: all var(--transition-normal);
 }
 
 .callout-countdown-wrap .digit-box:hover {
-  border-color: var(--border-gold);
+  border-color: rgba(255, 201, 40, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 201, 40, 0.2), inset 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(255, 201, 40, 0.15), inset 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 .callout-countdown-wrap .digit-value {
-  font-size: clamp(2rem, 4.8vw, 3.4rem);
-  font-weight: 900;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+  font-weight: 800;
   color: var(--highlight-gold);
   line-height: 1;
-  margin-bottom: 0.35rem;
-  text-shadow: 0 0 25px rgba(255, 201, 40, 0.45);
+  margin-bottom: 0.2rem;
+  text-shadow: 0 0 15px rgba(255, 201, 40, 0.35);
 }
 
 .callout-countdown-wrap .digit-label {
-  font-size: clamp(0.7rem, 1.4vw, 0.85rem);
-  letter-spacing: 0.12em;
-  font-weight: 800;
+  font-size: clamp(0.6rem, 1vw, 0.7rem);
+  letter-spacing: 0.1em;
+  font-weight: 700;
   color: var(--text-secondary);
 }
 
 .callout-countdown-wrap .digit-sep {
-  font-size: clamp(1.6rem, 3.8vw, 2.6rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
   color: var(--highlight-gold);
-  margin-top: -0.6rem;
-  text-shadow: 0 0 15px rgba(255, 201, 40, 0.35);
+  margin-top: -0.35rem;
+  text-shadow: 0 0 10px rgba(255, 201, 40, 0.3);
 }
 
 .callout-countdown-wrap .countdown-sub-bar {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 201, 40, 0.15);
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 580px;
+  margin: 0 auto;
 }
 
 .callout-countdown-wrap .countdown-micro-note {
-  font-size: clamp(0.78rem, 1.4vw, 0.88rem);
+  font-size: 0.76rem;
   color: var(--text-secondary);
-  letter-spacing: 0.04em;
-  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-weight: 500;
 }
 
 .callout-countdown-wrap .launch-celebration-card {
   margin: 0 auto;
   width: 100%;
   max-width: 100%;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 .callout-actions {
@@ -1765,12 +1798,12 @@ summary:focus-visible {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .callout-actions .btn {
-  padding: 0.6rem 1.4rem;
-  font-size: 0.88rem;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.85rem;
   letter-spacing: 0.03em;
 }
 

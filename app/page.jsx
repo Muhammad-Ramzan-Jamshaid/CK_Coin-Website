@@ -213,7 +213,7 @@ export default function HomePage() {
       {/* 6. COMMUNITY CALLOUT BANNER (Action-Focused) */}
       <section className="section-py community-callout-section" aria-label="Join Community">
         <div className="container">
-          <div className="callout-card glass-panel">
+          <div className="callout-card">
             <div className="callout-content">
               <h2 className="callout-title">
                 Claim Your Seat In <span className="gradient-text-royal">The CK Kingdom</span>

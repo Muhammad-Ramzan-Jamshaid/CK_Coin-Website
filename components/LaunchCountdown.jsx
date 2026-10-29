@@ -56,7 +56,7 @@ export default function LaunchCountdown({ targetTimestamp = siteConfig.launchAnn
   // STATE 2: ONCE LAUNCH DATE ARRIVES
   if (isLaunched) {
     return (
-      <div className="launch-celebration-card glass-panel" role="region" aria-label="Coin Launch Status">
+      <div className="launch-celebration-card" role="region" aria-label="Coin Launch Status">
         <div className="celebration-badge-row">
           <span className="celebration-live-dot" aria-hidden="true"></span>
           <span className="celebration-badge">OFFICIALLY LIVE ON DEX</span>
@@ -75,7 +75,7 @@ export default function LaunchCountdown({ targetTimestamp = siteConfig.launchAnn
 
   // STATE 1: ACTIVE COUNTDOWN (Spans box width, target badge removed, centered title)
   return (
-    <div className="launch-countdown-card glass-panel" role="region" aria-label="Launch Countdown Timer">
+    <div className="launch-countdown-card" role="region" aria-label="Launch Countdown Timer">
       <div className="countdown-top-bar countdown-top-bar-centered">
         <div className="countdown-title-wrap">
           <span className="countdown-crown-icon" aria-hidden="true">👑</span>
