@@ -1,6 +1,7 @@
 import SectionHeading from '../../components/SectionHeading';
 import RoadmapTimeline from '../../components/RoadmapTimeline';
 import Button from '../../components/Button';
+import LaunchCountdown from '../../components/LaunchCountdown';
 import { roadmapData } from '../../data/roadmap';
 import { siteConfig } from '../../data/siteConfig';
 
@@ -18,21 +19,24 @@ export default function RoadmapPage() {
       <section className="section-py roadmap-hero" aria-label="Roadmap Overview">
         <div className="container">
           <SectionHeading
-            badge="Strategic Timeline"
             title="The Royal"
             highlight="Roadmap"
             subtitle={header.subtitle}
           />
 
-          {/* Launch Date Notice Callout */}
+          {/* Launch Date Notice Callout With Countdown */}
           <div className="launch-notice-banner glass-panel">
             <div className="banner-left">
-              <span className="badge badge-gold">Launch Target</span>
               <h2 className="banner-title">{siteConfig.launchAnnouncement.displayText}</h2>
               <p className="banner-sub">{siteConfig.launchAnnouncement.subtext}</p>
             </div>
+
+            <div className="banner-countdown">
+              <LaunchCountdown />
+            </div>
+
             <div className="banner-right">
-              <Button href="/community" variant="secondary" size="md">
+              <Button href="/community" variant="secondary" size="sm">
                 <span>Get Launch Alerts</span>
                 <span aria-hidden="true">&rarr;</span>
               </Button>
