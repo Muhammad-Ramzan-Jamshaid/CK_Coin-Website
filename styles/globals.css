@@ -62,6 +62,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -77,6 +79,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
   font-size: 16px;
 }
 
@@ -497,14 +500,16 @@ summary:focus-visible {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(8, 5, 16, 0.97);
+  background-color: rgba(8, 5, 16, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   display: none;
   flex-direction: column;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.25rem 3.5rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   border-top: 1px solid var(--border-subtle);
+  z-index: 999;
 }
 
 .mobile-drawer-open {
@@ -1359,9 +1364,11 @@ summary:focus-visible {
 }
 
 /* Pillars Grid */
-.pillars-grid {
+.pillars-grid,
+.principles-grid,
+.security-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -1469,6 +1476,9 @@ summary:focus-visible {
 .callout-actions {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 /* ABOUT PAGE STYLES */
@@ -2628,24 +2638,51 @@ summary:focus-visible {
   line-height: 1.55;
 }
 
-/* RESPONSIVE BREAKPOINTS */
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE BREAKPOINTS (Desktop, Tablet, Mobile)
+   ========================================================================== */
+
+/* 1. Large Tablet / Small Laptop (<= 1024px) */
 @media (max-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  .ckpedia-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .nav-list {
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
   }
 }
 
+/* 2. Tablet Portrait (<= 960px) */
 @media (max-width: 960px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2.75rem;
   }
 
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .hero-subheading {
@@ -2661,6 +2698,16 @@ summary:focus-visible {
     margin: 0 auto;
   }
 
+  .hero-visual-col {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mascot-frame-outer {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
   .floating-hero-badge {
     right: 50%;
     transform: translateX(50%);
@@ -2668,6 +2715,15 @@ summary:focus-visible {
 
   .about-story-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .story-content {
+    text-align: center;
+  }
+
+  .story-cta-row {
+    justify-content: center;
   }
 
   .visual-card {
@@ -2680,36 +2736,223 @@ summary:focus-visible {
     gap: 1rem;
   }
 
-  .desktop-nav {
-    display: none;
-  }
-
-  .mobile-toggle-btn {
-    display: flex;
-  }
-
-  .header-cta {
-    display: none;
+  .steps-grid,
+  .myths-grid,
+  .metrics-grid,
+  .channels-grid,
+  .pillars-grid,
+  .principles-grid,
+  .security-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
-@media (max-width: 640px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+/* 3. Medium Mobile & Tablet (<= 768px) */
+@media (max-width: 768px) {
+  .section-py {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
-  .footer-bottom {
+  /* Transform Trust Bar into a sleek 2x2 grid */
+  .hero-trust-bar {
+    width: 100%;
+    max-width: 440px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.25rem;
+    padding: 1.25rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .hero-trust-bar .trust-sep {
+    display: none;
+  }
+
+  .hero-trust-bar .trust-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Sleek Lightweight Footer Mobile Stacking */
+  .footer-top-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand-info {
+    align-items: center;
+  }
+
+  .footer-nav {
+    justify-content: center;
+    gap: 0.85rem 1.35rem;
+  }
+
+  .footer-social-row {
+    justify-content: center;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+  }
+
+  .footer-short-disclaimer {
+    text-align: center;
+  }
+
+  /* Launch Notice Banner in Roadmap */
+  .launch-notice-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .banner-left {
+    align-items: center;
+  }
+
+  .banner-right {
+    width: 100%;
+  }
+
+  .banner-right .btn {
+    width: 100%;
+  }
+
+  /* Contract Address Box */
+  .contract-address-box {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .address-inner {
+    align-items: center;
+  }
+
+  .address-display {
+    word-break: break-all;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+}
+
+/* 4. Standard Mobile Phones (<= 640px) */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  /* Grids switch to full-width 1 column for readable cards */
+  .steps-grid,
+  .myths-grid,
+  .ckpedia-grid,
+  .metrics-grid,
+  .channels-grid,
+  .pillars-grid,
+  .principles-grid,
+  .security-cards-grid,
+  .intro-points-grid,
+  .manifesto-list,
+  .meme-vault-grid,
+  .roadmap-preview-cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Community Callout Card & Actions */
+  .callout-card {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .callout-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  }
+
+  .callout-sub {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .callout-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .callout-actions .btn {
+    width: 100%;
+  }
+
+  /* Intro Section */
+  .intro-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .intro-title {
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+  }
+
+  .intro-lead {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Mascot Frame & Orbit Rings */
+  .mascot-frame-outer {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .mascot-orbit-ring.ring-1 {
+    width: 106%;
+    height: 106%;
+  }
+
+  .mascot-orbit-ring.ring-2 {
+    width: 114%;
+    height: 114%;
+  }
+
+  /* Roadmap Timeline Mobile */
+  .roadmap-timeline {
+    padding: 0;
   }
 
   .timeline-track {
     left: 20px;
+    top: 25px;
+    bottom: 25px;
+  }
+
+  .timeline-item {
+    gap: 0.75rem;
   }
 
   .timeline-node {
     width: 42px;
+    padding-top: 0.75rem;
   }
 
   .node-outer {
@@ -2723,40 +2966,201 @@ summary:focus-visible {
     font-size: 0.8rem;
   }
 
-  .timeline-item {
-    gap: 1rem;
+  .timeline-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .milestones-block {
+    padding: 1rem 0.85rem;
   }
 
   .milestone-item {
+    flex-wrap: wrap;
+    gap: 0.45rem;
     font-size: 0.88rem;
   }
 
-  .launch-notice-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
+  .milestone-status-chip {
+    margin-left: auto;
   }
 
-  .roadmap-policy-box {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-
+  .roadmap-policy-box,
+  .purpose-box,
   .risk-card {
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1.35rem 1.15rem;
+  }
+
+  /* FAQ Accordion & Search Controls */
+  .faq-search-box {
+    width: 100%;
+  }
+
+  .faq-search-input {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem 0.85rem 2.6rem;
+  }
+
+  .faq-search-icon {
+    left: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .faq-filter-chips {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .faq-filter-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faq-filter-chip {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.82rem;
   }
 
   .faq-trigger {
-    padding: 1.1rem 1.25rem;
-    font-size: 1.02rem;
+    padding: 1.1rem 1rem;
+    font-size: 1rem;
+    gap: 0.75rem;
   }
 
   .faq-answer-inner {
-    padding: 0 1.25rem 1.25rem 1.25rem;
+    padding: 0 1rem 1.25rem 1rem;
     padding-top: 0.85rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  /* Buttons on Subpages */
+  .story-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .story-cta-row .btn {
+    width: 100%;
+  }
+
+  .tba-actions .btn {
+    width: 100%;
+  }
+}
+
+/* 5. Narrow Mobile Screens (<= 480px, iPhone SE & Compact Phones) */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .site-header {
+    height: 70px;
+  }
+
+  .container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .brand-mark {
+    gap: 0.6rem;
+  }
+
+  .coin-icon-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .coin-letters {
+    font-size: 11px;
+  }
+
+  .coin-crown {
+    font-size: 10px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* On narrow mobile, hide top bar social buttons to avoid crowding the header */
+  .header-actions .header-social-links {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    width: 40px;
+    height: 40px;
+    padding: 9px 7px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .hero-subheading {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .step-card,
+  .myth-card,
+  .ckpedia-card,
+  .metric-card,
+  .channel-card,
+  .custom-card {
+    padding: 1.35rem 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.92rem;
+  }
+
+  .btn-lg {
+    padding: 0.88rem 1.6rem;
+    font-size: 0.98rem;
+  }
+
+  .hero-trust-bar {
+    padding: 1rem 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .trust-label {
+    font-size: 0.68rem;
+  }
+
+  .trust-value {
+    font-size: 0.95rem;
+  }
+
+  .mascot-frame-outer {
+    max-width: 270px;
+  }
+
+  .channel-notice-modal {
+    padding: 1.35rem 1rem;
+    margin: 1rem;
   }
 }
 
