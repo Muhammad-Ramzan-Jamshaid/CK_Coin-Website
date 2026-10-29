@@ -30,11 +30,6 @@ export default function HomePage() {
               An open-source, community-led royal meme coin favored by sovereign believers worldwide.
               Dethroning copycat dog tokens with pure purple gorilla swagger.
             </p>
-
-            {/* Launch Countdown Timer (Live until 1st Nov, auto-switches to launched context) */}
-            <div className="hero-countdown-wrapper">
-              <LaunchCountdown />
-            </div>
           </div>
 
           {/* Hero Visual / Mascot Showcase */}
@@ -227,12 +222,18 @@ export default function HomePage() {
                 Be the first to hear official announcements, launch date confirmations, contract address deployment,
                 and community votes. No spam, no scams, only verified project updates.
               </p>
+
+              {/* Horizontally Aligned Launch Countdown Timer */}
+              <div className="callout-countdown-wrap">
+                <LaunchCountdown />
+              </div>
+
               <div className="callout-actions">
                 <Button
                   href="https://t.me/Crazyking7860"
                   isExternal={true}
                   variant="primary"
-                  size="lg"
+                  size="sm"
                 >
                   <span>Join Telegram</span>
                   <span aria-hidden="true">&rarr;</span>
@@ -241,12 +242,12 @@ export default function HomePage() {
                   href="https://x.com/CrAzYKiNg0786"
                   isExternal={true}
                   variant="secondary"
-                  size="lg"
+                  size="sm"
                 >
                   <span>Follow on 𝕏</span>
                   <span aria-hidden="true">&rarr;</span>
                 </Button>
-                <Button href="/community" variant="ghost" size="lg">
+                <Button href="/community" variant="ghost" size="sm">
                   <span>Community Hub</span>
                 </Button>
               </div>

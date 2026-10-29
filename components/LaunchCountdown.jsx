@@ -100,28 +100,8 @@ export default function LaunchCountdown({ targetTimestamp = siteConfig.launchAnn
         </h3>
 
         <p className="celebration-desc">
-          The Crown has officially ascended! Verified trading liquidity is live. Ensure you only swap through founder-confirmed addresses below.
+          The Crown has officially ascended! Verified trading liquidity is live. Connect and trade safely through the official channels below.
         </p>
-
-        <div className="celebration-actions">
-          <a
-            href="https://t.me/Crazyking7860"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-sm"
-          >
-            <span>Join Official Telegram</span>
-            <span aria-hidden="true">&rarr;</span>
-          </a>
-          <a
-            href="https://x.com/CrAzYKiNg0786"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary btn-sm"
-          >
-            <span>Follow on 𝕏 Updates</span>
-          </a>
-        </div>
       </div>
     );
   }
