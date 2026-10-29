@@ -57,15 +57,6 @@ export const siteConfig = {
       description: "Official announcements, ecosystem news, and project media releases.",
       available: true,
     },
-    {
-      name: "Discord",
-      id: "discord",
-      status: "Community Server In Setup",
-      url: null,
-      handle: "CK Coin Kingdom",
-      description: "Community hangout, governance discussions, and member roles.",
-      available: false,
-    },
   ],
 
   // Navigation Links

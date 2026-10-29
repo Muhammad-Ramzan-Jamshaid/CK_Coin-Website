@@ -42,7 +42,6 @@ export default function CommunityPage() {
                   <div className="channel-icon">
                     {social.id === 'telegram' && '✈️'}
                     {social.id === 'twitter' && '𝕏'}
-                    {social.id === 'discord' && '💬'}
                   </div>
                   <span className={`badge ${social.available ? 'badge-active' : 'badge-tba'}`}>
                     {social.available ? 'Live' : 'Pending Activation'}

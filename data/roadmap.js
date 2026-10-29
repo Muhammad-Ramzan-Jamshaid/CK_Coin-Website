@@ -33,7 +33,7 @@ export const roadmapData = {
       statusType: "tbd",
       summary: "Opening official channels, smart contract testing on testnet, and security review prior to launch.",
       items: [
-        { name: "Official Telegram & Discord Public Opening", status: "TBD", verified: false },
+        { name: "Official Telegram & Community Channel Opening", status: "TBD", verified: false },
         { name: "Smart Contract Architecture & Testnet Run", status: "TBD", verified: false },
         { name: "Third-Party Code Audit & Security Assessment", status: "TBD", verified: false },
         { name: "Initial Tokenomics & Supply Cap Reveal", status: "TBD", verified: false },

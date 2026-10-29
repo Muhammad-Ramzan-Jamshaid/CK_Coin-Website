@@ -53,7 +53,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. "WHAT IS CK COIN?" (Clean, Light & Punchy, No Badges) */}
+      {/* 2. COMMUNITY COUNTDOWN & ACTION BANNER (Right Below Hero) */}
+      <section className="section-py community-callout-section" aria-label="Join Community">
+        <div className="container">
+          <div className="callout-card">
+            <div className="callout-content">
+              <h2 className="callout-title">
+                Claim Your Seat In <span className="gradient-text-royal">The CK Kingdom</span>
+              </h2>
+              <p className="callout-sub">
+                Be the first to hear official announcements, launch date confirmations, contract address deployment,
+                and community votes. No spam, no scams, only verified project updates.
+              </p>
+
+              {/* Horizontally Aligned Launch Countdown Timer */}
+              <div className="callout-countdown-wrap">
+                <LaunchCountdown />
+              </div>
+
+              <div className="callout-actions">
+                <Button
+                  href="https://t.me/Crazyking7860"
+                  isExternal={true}
+                  variant="primary"
+                  size="sm"
+                >
+                  <span>Join Telegram</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </Button>
+                <Button
+                  href="https://x.com/CrAzYKiNg0786"
+                  isExternal={true}
+                  variant="secondary"
+                  size="sm"
+                >
+                  <span>Follow on 𝕏</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </Button>
+                <Button href="/community" variant="ghost" size="sm">
+                  <span>Community Hub</span>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. "WHAT IS CK COIN?" (Clean, Light & Punchy, No Badges) */}
       <section className="section-py what-is-section" id="about" aria-label="What is CK Coin">
         <div className="container">
           <div className="intro-card glass-panel">
@@ -92,7 +138,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. "HOW TO GET STARTED" (Clean 3 Steps) */}
+      {/* 4. "HOW TO GET STARTED" (Clean 3 Steps) */}
       <section className="section-py get-started-section" id="how-to-buy" aria-label="How to Get Started">
         <div className="container">
           <SectionHeading
@@ -152,7 +198,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* 5. "CK-PEDIA: EXPLORE THE ECOSYSTEM" */}
       <section className="section-py ckpedia-section" aria-label="Ecosystem Resources">
         <div className="container">
@@ -206,52 +251,6 @@ export default function HomePage() {
                 Join verified Telegram & X channels, review the anti-scam protocol, and learn how to stay protected.
               </p>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. COMMUNITY CALLOUT BANNER (Action-Focused) */}
-      <section className="section-py community-callout-section" aria-label="Join Community">
-        <div className="container">
-          <div className="callout-card">
-            <div className="callout-content">
-              <h2 className="callout-title">
-                Claim Your Seat In <span className="gradient-text-royal">The CK Kingdom</span>
-              </h2>
-              <p className="callout-sub">
-                Be the first to hear official announcements, launch date confirmations, contract address deployment,
-                and community votes. No spam, no scams, only verified project updates.
-              </p>
-
-              {/* Horizontally Aligned Launch Countdown Timer */}
-              <div className="callout-countdown-wrap">
-                <LaunchCountdown />
-              </div>
-
-              <div className="callout-actions">
-                <Button
-                  href="https://t.me/Crazyking7860"
-                  isExternal={true}
-                  variant="primary"
-                  size="sm"
-                >
-                  <span>Join Telegram</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </Button>
-                <Button
-                  href="https://x.com/CrAzYKiNg0786"
-                  isExternal={true}
-                  variant="secondary"
-                  size="sm"
-                >
-                  <span>Follow on 𝕏</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </Button>
-                <Button href="/community" variant="ghost" size="sm">
-                  <span>Community Hub</span>
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
