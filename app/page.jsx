@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../components/Button';
 import SectionHeading from '../components/SectionHeading';
+import LaunchCountdown from '../components/LaunchCountdown';
 import { siteConfig } from '../data/siteConfig';
-import { tokenomicsData } from '../data/tokenomics';
 
 export const metadata = {
   title: 'CK Coin | The Crown Is Coming',
@@ -13,7 +13,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div className="home-page">
-      {/* 1. HERO SECTION (Clean, Bold, No Links, No Badges) */}
+      {/* 1. HERO SECTION (Clean, Bold, Live Launch Countdown) */}
       <section className="hero-section" aria-label="Hero Introduction">
         <div className="cosmic-glow glow-top-center" aria-hidden="true"></div>
         <div className="cosmic-glow glow-right-purple" aria-hidden="true"></div>
@@ -31,27 +31,9 @@ export default function HomePage() {
               Dethroning copycat dog tokens with pure purple gorilla swagger.
             </p>
 
-            {/* Quick trust metrics bar */}
-            <div className="hero-trust-bar">
-              <div className="trust-item">
-                <span className="trust-label">Ticker</span>
-                <span className="trust-value glow-text-gold">{tokenomicsData.summary.tokenSymbol}</span>
-              </div>
-              <div className="trust-sep" aria-hidden="true"></div>
-              <div className="trust-item">
-                <span className="trust-label">Total Supply</span>
-                <span className="trust-value">1,000,000,000</span>
-              </div>
-              <div className="trust-sep" aria-hidden="true"></div>
-              <div className="trust-item">
-                <span className="trust-label">Taxes</span>
-                <span className="trust-value glow-text-gold">0% Tax</span>
-              </div>
-              <div className="trust-sep" aria-hidden="true"></div>
-              <div className="trust-item">
-                <span className="trust-label">Contract</span>
-                <span className="trust-value status-tag">Pending Deploy</span>
-              </div>
+            {/* Launch Countdown Timer (Live until 1st Nov, auto-switches to launched context) */}
+            <div className="hero-countdown-wrapper">
+              <LaunchCountdown />
             </div>
           </div>
 
@@ -175,72 +157,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. "FUD BUSTED: TRUTH & TRANSPARENCY" */}
-      <section className="section-py myths-section" aria-label="Myth Busting & Facts">
-        <div className="container">
-          <SectionHeading
-            title="FUD Busted:"
-            highlight="Truth & Transparency"
-            subtitle="Common crypto doubts clarified with straight, verifiable facts."
-          />
-
-          <div className="myths-grid">
-            <div className="myth-card glass-panel">
-              <div className="myth-header">
-                <span className="myth-badge">Misconception #1</span>
-              </div>
-              <h3 className="myth-question">
-                &ldquo;Is there a secret private sale or team pre-mine?&rdquo;
-              </h3>
-              <div className="fact-box">
-                <div className="fact-title-row">
-                  <span>✅</span>
-                  <span className="fact-tag">Fact: 100% Fair Launch</span>
-                </div>
-                <p className="fact-text">
-                  Zero private seed rounds or VC pre-allocations. Fair public liquidity ensures all community members start equally.
-                </p>
-              </div>
-            </div>
-
-            <div className="myth-card glass-panel">
-              <div className="myth-header">
-                <span className="myth-badge">Misconception #2</span>
-              </div>
-              <h3 className="myth-question">
-                &ldquo;Is CK Coin already trading on decentralized exchanges?&rdquo;
-              </h3>
-              <div className="fact-box">
-                <div className="fact-title-row">
-                  <span>✅</span>
-                  <span className="fact-tag">Fact: Contract Pending Deploy</span>
-                </div>
-                <p className="fact-text">
-                  The official contract has not yet been deployed. Any token claiming to be $CK right now is an unverified copycat.
-                </p>
-              </div>
-            </div>
-
-            <div className="myth-card glass-panel">
-              <div className="myth-header">
-                <span className="myth-badge">Misconception #3</span>
-              </div>
-              <h3 className="myth-question">
-                &ldquo;Are there hidden taxes or transfer fees?&rdquo;
-              </h3>
-              <div className="fact-box">
-                <div className="fact-title-row">
-                  <span>✅</span>
-                  <span className="fact-tag">Fact: 0% Transaction Taxes</span>
-                </div>
-                <p className="fact-text">
-                  CK Coin is designed around a clean 0% hidden transaction tax model with locked liquidity upon deployment.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 5. "CK-PEDIA: EXPLORE THE ECOSYSTEM" */}
       <section className="section-py ckpedia-section" aria-label="Ecosystem Resources">

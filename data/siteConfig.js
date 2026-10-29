@@ -15,9 +15,9 @@ export const siteConfig = {
   // Launch date announcement as displayed in official artwork
   launchAnnouncement: {
     displayText: "Launching 1st Nov",
-    subtext: "Exact year, time & timezone to be announced by project leadership",
-    isDateConfirmed: false, // If true and timestamp provided, countdown activates
-    targetTimestamp: null,  // ISO string e.g. "2026-11-01T14:00:00Z"
+    subtext: "Official Fair Launch on Decentralized Exchanges",
+    isDateConfirmed: true,
+    targetTimestamp: "2026-11-01T00:00:00+05:00", // Target: 1st Nov 2026
   },
 
   // Primary Call-to-Actions

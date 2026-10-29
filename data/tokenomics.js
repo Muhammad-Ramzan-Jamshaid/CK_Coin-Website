@@ -1,8 +1,7 @@
 /**
  * CK Coin - Tokenomics Data
  * Adheres strictly to Section 1.2 & FR-06:
- * Unknown project facts display as "To be announced" or approved placeholders.
- * No invented token supply, blockchain, allocation percentages, or fake contract address.
+ * Confirmed project facts: 1,000,000,000 Supply, 0% Taxes, Fair Launch.
  */
 
 export const tokenomicsData = {
@@ -11,9 +10,9 @@ export const tokenomicsData = {
     tokenSymbol: "CK",
     network: "To be announced",
     standard: "To be announced",
-    totalSupply: "To be announced",
-    circulatingSupply: "To be announced",
-    contractAddress: null, // Will display verified copy badge when provided
+    totalSupply: "1,000,000,000",
+    circulatingSupply: "1,000,000,000",
+    contractAddress: null, // Will display verified copy badge when deployed
   },
 
   metrics: [
@@ -26,6 +25,22 @@ export const tokenomicsData = {
       hint: "Official ticker visible in brand artwork"
     },
     {
+      id: "supply",
+      label: "Total Supply",
+      value: "1,000,000,000",
+      status: "Confirmed",
+      isTba: false,
+      hint: "Fixed supply cap of 1 Billion tokens"
+    },
+    {
+      id: "tax",
+      label: "Buy / Sell Tax",
+      value: "0% Tax",
+      status: "Confirmed",
+      isTba: false,
+      hint: "Zero hidden transaction taxes or transfer fees"
+    },
+    {
       id: "network",
       label: "Blockchain Network",
       value: "To be announced",
@@ -34,35 +49,19 @@ export const tokenomicsData = {
       hint: "Selected chain will prioritize speed, low gas, and liquidity safety"
     },
     {
-      id: "supply",
-      label: "Total Supply",
-      value: "To be announced",
-      status: "Under Audit Review",
-      isTba: true,
-      hint: "Supply cap will be locked upon smart contract deployment"
-    },
-    {
       id: "distribution",
       label: "Allocation Model",
-      value: "Fair Community Allocation",
-      status: "In Structuring",
-      isTba: true,
-      hint: "Transparent breakdown will be published with verifiable lock proofs"
-    },
-    {
-      id: "tax",
-      label: "Buy / Sell Fee",
-      value: "To be announced",
-      status: "Pending Finalization",
-      isTba: true,
-      hint: "Targeting 0% or minimal community-sustaining parameters"
+      value: "100% Fair Launch",
+      status: "Confirmed",
+      isTba: false,
+      hint: "Zero secret private seed sales or VC allocations"
     },
     {
       id: "liquidity",
       label: "Liquidity Commitment",
-      value: "To be locked on launch",
+      value: "Locked on Launch",
       status: "Mandatory Policy",
-      isTba: true,
+      isTba: false,
       hint: "Liquidity pool lock verification links will be provided at launch"
     }
   ],
@@ -76,8 +75,8 @@ export const tokenomicsData = {
 
   principles: [
     {
-      title: "Zero Fictional Claims",
-      desc: "Unlike deceptive projects that fabricate token supplies and distribution charts before code is written, CK Coin only presents verified facts."
+      title: "100% Fair Public Launch",
+      desc: "Zero private seed rounds or VC pre-allocations. Fair public liquidity ensures all community members start equally."
     },
     {
       title: "Verifiable On-Chain Proofs",
